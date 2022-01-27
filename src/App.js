@@ -62,15 +62,20 @@ function App() {
   
   
   // handles colors for traffic light
-  function handleColorRed() {
-    setLightColor('red');
+
+  function handleColor(color) {
+    setLightColor(color);
   }
-  function handleColorYellow() {
-    setLightColor('yellow');
-  }
-  function handleColorGreen() {
-    setLightColor('green');
-  }
+
+  // function handleColorRed() {
+  //   setLightColor('red');
+  // }
+  // function handleColorYellow() {
+  //   setLightColor('yellow');
+  // }
+  // function handleColorGreen() {
+  //   setLightColor('green');
+  // }
 
     // ------------------------------------------------
 
@@ -110,11 +115,11 @@ function App() {
       <TrafficLight color={lightColor} />
       <div className="buttons">
         {/* when you click this button, the color of the light in state should be set to 'red' */}
-        <button onClick={handleColorRed}>Red</button>
+        <button onClick={() => handleColor('red')}>Red</button>
         {/* when you click this button, the color of the light in state should be set to 'yellow' */}
-        <button onClick={handleColorYellow}>Yellow</button>
+        <button onClick={() => handleColor('yellow')}>Yellow</button>
         {/* when you click this button, the color of the light in state should be set to 'green' */}
-        <button onClick={handleColorGreen}>Green</button>
+        <button onClick={() => handleColor('green')}>Green</button>
       </div>
       {/* 
       the VehicleList component takes in one prop: vehicles.
