@@ -30,6 +30,17 @@ function App() {
     setAlienSizeCount(alienSize - 1);
   }
 
+  function handleColorRed() {
+    setLightColor('red')
+  }
+
+  function handleColorYellow() {
+    setLightColor('yellow')
+  }
+  function handleColorGreen() {
+    setLightColor('green')
+  }
+
   return (
     <div className="App">
       <div className="fight">
