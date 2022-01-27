@@ -15,31 +15,56 @@ function App() {
   const [vehicleArr, setVehicleArr] = useState(['car', 'truck']);
 
 
+  
+  
   // handles size elements for lizard and alien
-  function handleLizardBigger() {
-    setLizardSizeCount(lizardSizeCount + 1);
+  function handleLizardHeight(mathFunction) {
+    if (mathFunction === 'add') {
+      
+      setLizardSizeCount(lizardSizeCount + 1);
+    }
+
+    if (mathFunction === 'subtract') {
+      
+      setLizardSizeCount(lizardSizeCount - 1);
+    }
   }
 
-  function handleLizardSmaller() {
-    setLizardSizeCount(lizardSizeCount - 1);
-  }
+  function handleAlienHeight(mathFunction) {
+    if (mathFunction === 'add') {
+      
+      setAlienSizeCount(alienSizeCount + 1);
+    }
 
-  function handleAlienBigger() {
-    setAlienSizeCount(alienSizeCount + 1);
+    if (mathFunction === 'subtract') {
+      
+      setAlienSizeCount(alienSizeCount - 1);
+    }
   }
+  // function handleLizardBigger() {
+  //   setLizardSizeCount(lizardSizeCount + 1);
+  // }
 
-  function handleAlienSmaller() {
-    setAlienSizeCount(alienSizeCount - 1);
-  }
+  // function handleLizardSmaller() {
+  //   setLizardSizeCount(lizardSizeCount - 1);
+  // }
 
+  // function handleAlienBigger() {
+  //   setAlienSizeCount(alienSizeCount + 1);
+  // }
+
+  // function handleAlienSmaller() {
+  //   setAlienSizeCount(alienSizeCount - 1);
+  // }
+
+  
+  // ------------------------------------------------
+  
+  
+  // handles colors for traffic light
   function handleColorRed() {
     setLightColor('red');
   }
-
-  // ------------------------------------------------
-
-
-  // handles colors for traffic light
   function handleColorYellow() {
     setLightColor('yellow');
   }
@@ -50,9 +75,9 @@ function App() {
     // ------------------------------------------------
 
 
-  function handleCarAdd() {
-    setVehicleArr([...vehicleArr, 'car']);
-  }
+  // function handleCarAdd() {
+  //   setVehicleArr([...vehicleArr, 'car']);
+  // }
 
   function handleAddVehicle(vehicle) {
     setVehicleArr([...vehicleArr, vehicle]);
@@ -66,9 +91,9 @@ function App() {
           <img src="alien.png" width={alienSizeCount * 10} />
           <div className='buttons'>
             {/* when you click this button, the alien's size in state should go up by one */}
-            <button onClick={handleAlienBigger}>Oh no! The alien is gobblin up all the electricity!</button>
+            <button onClick={() => handleAlienHeight('add')}>Oh no! The alien is gobblin up all the electricity!</button>
             {/* when you click this button, the lizard's size in state should go down by one */}
-            <button onClick={handleAlienSmaller}>Amazing! The alien zapped the lizard!</button>
+            <button onClick={() => handleAlienHeight('subtract')}>Amazing! The alien zapped the lizard!</button>
           </div>
         </div>
         <div className="monster">
@@ -76,9 +101,9 @@ function App() {
           <img src="lizard.png" width={lizardSizeCount * 10} />
           <div className="buttons">
             {/* when you click this button, the lizard's size in state should go up by one */}
-            <button onClick={handleLizardBigger}>Yegads! The lizard is ramping up to its final form!</button>
+            <button onClick={() => handleLizardHeight('add')}>Yegads! The lizard is ramping up to its final form!</button>
             {/* when you click this button, the alien's size in state should go up by one */}
-            <button onClick={handleLizardSmaller}>Oh my! The lizard chomped down on the alien!</button>
+            <button onClick={() => handleLizardHeight('subtract')}>Oh my! The lizard chomped down on the alien!</button>
           </div>
         </div>
       </div>
