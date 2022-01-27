@@ -10,8 +10,25 @@ function App() {
   // lizardSize should be a number that starts out as 10
   const [lizardSizeCount, setLizardSizeCount] = useState(3);
   // alienSize should be a number that starts out as 10
-  const [alienSize, setLizardSizeCount] = useState(3)
+  const [alienSize, setAlienSizeCount] = useState(3)
   // traffic is complicated. It should be an array of strings that starts out as ['car', 'truck']
+
+
+  function handleLizardBigger() {
+    setLizardSizeCount(lizardSizeCount + 1);
+  }
+
+  function handleLizardSmaller() {
+    setLizardSizeCount(lizardSizeCount - 1);
+  }
+
+  function handleAlienBigger() {
+    setAlienSizeCount(alienSize + 1);
+  }
+
+  function handleAlienSmaller() {
+    setAlienSizeCount(alienSize - 1);
+  }
 
   return (
     <div className="App">
