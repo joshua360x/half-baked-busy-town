@@ -68,11 +68,11 @@ function App() {
       <TrafficLight color={lightColor} />
       <div className="buttons">
         {/* when you click this button, the color of the light in state should be set to 'red' */}
-        <button >Red</button>
+        <button onClick={handleColorRed}>Red</button>
         {/* when you click this button, the color of the light in state should be set to 'yellow' */}
-        <button>Yellow</button>
+        <button onClick={handleColorYellow}>Yellow</button>
         {/* when you click this button, the color of the light in state should be set to 'green' */}
-        <button>Green</button>
+        <button onClick={handleColorGreen}>Green</button>
       </div>
       {/* 
       the VehicleList component takes in one prop: vehicles.
