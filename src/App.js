@@ -18,29 +18,58 @@ function App() {
   
   
   // handles size elements for lizard and alien
-  function handleLizardHeight(mathFunction) {
-    if (mathFunction === 'add') {
+
+  function handleHeight(mathFunction, monster) {
+    if (mathFunction === 'add' && monster === 'lizard') {
       
       setLizardSizeCount(lizardSizeCount + 1);
     }
 
-    if (mathFunction === 'subtract') {
+    else if (mathFunction === 'subtract' && monster === 'lizard') {
       
       setLizardSizeCount(lizardSizeCount - 1);
     }
-  }
 
-  function handleAlienHeight(mathFunction) {
-    if (mathFunction === 'add') {
+    else if (mathFunction === 'add' && monster === 'alien') {
       
       setAlienSizeCount(alienSizeCount + 1);
     }
 
-    if (mathFunction === 'subtract') {
+    else if (mathFunction === 'subtract' && monster === 'alien') {
       
       setAlienSizeCount(alienSizeCount - 1);
     }
+
+    else {
+      alert('Please Enter A Valid Value');
+    }
+
   }
+
+
+  // function handleLizardHeight(mathFunction) {
+  //   if (mathFunction === 'add') {
+      
+  //     setLizardSizeCount(lizardSizeCount + 1);
+  //   }
+
+  //   if (mathFunction === 'subtract') {
+      
+  //     setLizardSizeCount(lizardSizeCount - 1);
+  //   }
+  // }
+
+  // function handleAlienHeight(mathFunction) {
+  //   if (mathFunction === 'add') {
+      
+  //     setAlienSizeCount(alienSizeCount + 1);
+  //   }
+
+  //   if (mathFunction === 'subtract') {
+      
+  //     setAlienSizeCount(alienSizeCount - 1);
+  //   }
+  // }
   // function handleLizardBigger() {
   //   setLizardSizeCount(lizardSizeCount + 1);
   // }
@@ -96,9 +125,9 @@ function App() {
           <img src="alien.png" width={alienSizeCount * 10} />
           <div className='buttons'>
             {/* when you click this button, the alien's size in state should go up by one */}
-            <button onClick={() => handleAlienHeight('add')}>Oh no! The alien is gobblin up all the electricity!</button>
+            <button onClick={() => handleHeight('add', 'alien')}>Oh no! The alien is gobblin up all the electricity!</button>
             {/* when you click this button, the lizard's size in state should go down by one */}
-            <button onClick={() => handleAlienHeight('subtract')}>Amazing! The alien zapped the lizard!</button>
+            <button onClick={() => handleHeight('subtract', 'alien')}>Amazing! The alien zapped the lizard!</button>
           </div>
         </div>
         <div className="monster">
@@ -106,9 +135,9 @@ function App() {
           <img src="lizard.png" width={lizardSizeCount * 10} />
           <div className="buttons">
             {/* when you click this button, the lizard's size in state should go up by one */}
-            <button onClick={() => handleLizardHeight('add')}>Yegads! The lizard is ramping up to its final form!</button>
+            <button onClick={() => handleHeight('add', 'lizard')}>Yegads! The lizard is ramping up to its final form!</button>
             {/* when you click this button, the alien's size in state should go up by one */}
-            <button onClick={() => handleLizardHeight('subtract')}>Oh my! The lizard chomped down on the alien!</button>
+            <button onClick={() => handleHeight('subtract', 'lizard')}>Oh my! The lizard chomped down on the alien!</button>
           </div>
         </div>
       </div>
