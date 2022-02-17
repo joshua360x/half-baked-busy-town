@@ -144,11 +144,11 @@ function App() {
       <TrafficLight color={lightColor} />
       <div className="buttons">
         {/* when you click this button, the color of the light in state should be set to 'red' */}
-        <button onClick={() => handleColor('red')}>Red</button>
+        <button role='red-btn' onClick={() => handleColor('red')}>Red</button>
         {/* when you click this button, the color of the light in state should be set to 'yellow' */}
-        <button onClick={() => handleColor('yellow')}>Yellow</button>
+        <button role='yellow-btn' onClick={() => handleColor('yellow')}>Yellow</button>
         {/* when you click this button, the color of the light in state should be set to 'green' */}
-        <button onClick={() => handleColor('green')}>Green</button>
+        <button role='green-btn' onClick={() => handleColor('green')}>Green</button>
       </div>
       {/* 
       the VehicleList component takes in one prop: vehicles.
@@ -159,7 +159,7 @@ function App() {
       <div className='buttons'>
         {/* This part is weird */}
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'car' to the end */}
-        <button onClick={() => handleAddVehicle('car')}>Car</button>
+        <button role='carBtn' onClick={() => handleAddVehicle('car')}>Car</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'bus' to the end */}
         <button onClick={() => handleAddVehicle('bus')}>Bus</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'truck' to the end */}
