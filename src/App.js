@@ -146,7 +146,7 @@ function App() {
         {/* when you click this button, the color of the light in state should be set to 'red' */}
         <button onClick={() => handleColor('red')}>Red</button>
         {/* when you click this button, the color of the light in state should be set to 'yellow' */}
-        <button onClick={() => handleColor('yellow')}>Yellow</button>
+        <button role='yellow-btn' onClick={() => handleColor('yellow')}>Yellow</button>
         {/* when you click this button, the color of the light in state should be set to 'green' */}
         <button onClick={() => handleColor('green')}>Green</button>
       </div>
